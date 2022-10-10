@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000;
+    background-size: cover;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+html {
+    height: 100%;
+}
+
+header {
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+}
+
+main {
+    /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 1 0 auto;
+}
+
+footer {
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+}
+
+.header {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+.main {
+    width: 1260px;
+    margin: 0 auto;
+    background: white;
+    height: max-content;
+    opacity: 97%;
+}
+
+.mainContainer {
+    width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.footer {
+    width: 1260px;
+    margin: 0 auto;
+    background:linear-gradient(
+        to right,
+        orangered,
+        orange,
+        gold,
+        lightgreen,
+        cyan,
+        dodgerblue,
+        mediumpurple,
+        hotpink,
+        orangered);
+;
+    height: 50px;
+    margin-bottom: 40px;
+}
+
+.header__top {
+    height: 50px;
+    background:linear-gradient(
+        to right,
+        orangered,
+        orange,
+        gold,
+        lightgreen,
+        cyan,
+        dodgerblue,
+        mediumpurple,
+        hotpink,
+        orangered);
+;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header__bottom {
+    height: 70px;
+    border: 1px grey solid;
+    background: gainsboro;
+}
+
+.header__topLink {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    font-size: 35px;
+    line-height: 50px;
+    margin-left: 40px;
+}
+
+.header__link {
+    color: whitesmoke;
+}
+
+.header__link:hover {
+    color: darkred;
+}
+
+.header__top_input {
+    width: 600px;
+    height: 20px;
+    border-radius: 10px;
+    margin-left: 60px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    color: darkred;
+}
+
+.header__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__bottom_list {
+    display: flex;
+    justify-content: space-around;
+    width: 1000px;
+    list-style-type: none;
+}
+
+.header__bottom_link {
+    color: grey;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 70px;
+    text-decoration: none;
+    padding: 0 50px 0 50px;
+    text-transform: uppercase;
+}
+
+.header__bottom_link:hover {
+    color: whitesmoke;
+    background: grey;
+}
+
+.cart-button {
+    margin-right: 80px;
+    width: 200px;
+    border-radius: 50px;
+    color: whitesmoke;
+    background:linear-gradient(
+        to right,
+        orangered,
+        orange,
+        gold,
+        lightgreen,
+        cyan,
+        dodgerblue,
+        mediumpurple,
+        hotpink,
+        orangered);
+;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    border: none;
+    box-shadow: 2px 2px grey;
+}
+
+.cart-button:hover {
+    background: darkred;
+    box-shadow: none;
+}
+
+.footer__text {
+    color: whitesmoke;
+    margin-left: 60px;
+    line-height: 50px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    color: grey;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+.product-price {
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    color: darkred;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item {
+    text-align: center;
+    text-decoration: none;
+    transition: 1s;
+    width: auto;
+    height: 520px;
+    border: #aba1a1 1px solid;
+    margin: 20px;
+}
+
+.by-btn {
+    width: 120px;
+    height: 30px;
+    border-radius: 15px;
+    color: whitesmoke;
+    background: linear-gradient(
+        to right,
+        orangered,
+        orange,
+        gold,
+        lightgreen,
+        cyan,
+        dodgerblue,
+        mediumpurple,
+        hotpink,
+        orangered);
+;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    box-shadow: 2px 2px grey;
+}
+
+.by-btn:hover {
+    background: darkred;
+    box-shadow: none;
+}
+
+.product-img {
+    ima
+    border-radius: 15px 15px 0 0;
+}
