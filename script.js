@@ -22,7 +22,7 @@ this.goods = [];
 }
 fetchGoods() {
 this.goods = [
-    { id: 1, title: 'Пиджак', price: 17300, img: '/img/Cos.jpeg' },
+    { id: 1, title: 'Пиджак', price: 17300, img: './img/Cos.jpeg' },
     { id: 2, title: 'Длинное платье', price: 160000, img: './img/Valentino.jpeg' },
     { id: 3, title: 'Туфли', price: 35500, img: './img/SergioRossi.jpeg'},
 ];
@@ -35,11 +35,22 @@ listHtml += goodItem.render();
 });
 document.querySelector('.goods-list').innerHTML = listHtml;
 }
+//посчитать итоговую сумму товаров
+getTotalPrice(){
+    let sum = 0;
+    for (let i=0; i<this.goods.length; i++){
+        sum = sum + this.goods[i].price
+    }
+    console.log(sum);
+}
+
 }
 const list = new GoodsList();
 list.fetchGoods();
 list.render();
+list.getTotalPrice();
 
+//создать класс Корзина
 class Box {
     constructor(){
         this.items = [];
@@ -50,21 +61,27 @@ class Box {
     show(){
         console.log(this.items); //показать корзину
     }
-    clearCart(){
+    /*clearCart(){
         this.items = [] //очистить корзину
+    }*/
+    addTotalPriceBox(){ //посчитать итог в корзине
+        let sum = 0;
+        for(let i=0; i<this.items.length; i++){
+            sum = sum + this.items[i].price
+        }
+        console.log(sum)
     }
 }
 
 const cart = new Box();
 
-cart.add('Пиджак'); 
+cart.add({ id: 1, title: 'Пиджак', price: 17300, img: './img/Cos.jpeg' }); 
 
-cart.add('Туфли');
+cart.add({ id: 3, title: 'Туфли', price: 35500, img: './img/SergioRossi.jpeg'});
 
 cart.show();
-cart.clearCart();
+//cart.clearCart();
 cart.show();
-
-//Посчитать итоговую сумму в GoodsList
+cart.addTotalPriceBox();
 
 
