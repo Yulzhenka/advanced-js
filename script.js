@@ -35,22 +35,9 @@ function makeGETRequest(url) {
         }
         xhr.open('GET', url, true);
         xhr.send();
-
-
-
-
-
-
-
-
     });
 
-
-
-
     return promise;
-
-    
 }
 
 class GoodsList {
@@ -58,7 +45,10 @@ class GoodsList {
         this.goods = [];
     }
     fetchGoods(cb) {
-        makeGETRequest(`${API_URL}/catalogData.json`);
+        makeGETRequest(`${API_URL}/catalogData.json`).then((goods) => {
+            this.goods = JSON.parse(goods);
+            cb(this.goods);
+        });
     }
     render() {
         let listHtml = '';
