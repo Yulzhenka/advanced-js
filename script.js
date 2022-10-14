@@ -12,10 +12,10 @@ function makeGETRequest(url) {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
         }
         xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
+            if (xhr.readyState === 4) {
 
-            resolve(xhr.responseText);
-        }
+                resolve(xhr.responseText);
+            }
         }
         xhr.open('GET', url, true);
         xhr.send();
@@ -33,7 +33,7 @@ function makeGETRequest(url) {
                 <img src="${this.img}" alt="image" class="goods-img">
                 <h3 class="goods-product_name">${this.product_name}</h3>
                 <p class="goods-price">₽ ${this.price}</p>
-                <button class="by-btn">В корзину</button>
+                <button class="by-btn" onclick='cart.add(${JSON.stringify({id: 1, title: this.product_name, price: this.price})})'>В корзину</button>
             </div>`;
     }
 }
@@ -73,6 +73,8 @@ list.fetchGoods(() => {
 });
 
 
+//-----
+
 
 //создать класс Корзина
 class Box {
@@ -99,13 +101,10 @@ class Box {
 
 const cart = new Box();
 
-cart.add({ id: 1, title: 'Пиджак', price: 17300, img: './img/Cos.jpeg' }); 
-
-cart.add({ id: 3, title: 'Туфли', price: 35500, img: './img/SergioRossi.jpeg'});
 
 cart.show();
 //cart.clearCart();
-cart.show();
+//cart.show();
 cart.addTotalPriceBox();
 
-
+window.cart = cart;
