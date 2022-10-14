@@ -1,21 +1,6 @@
 'use strict'; 
 
- class GoodsItem {
-    constructor(product_name, price, img) {
-        this.product_name = product_name;
-        this.price = price;
-        this.img = img;
-    }
-    render() {
-        return `<div class="goods-item">
-                <img src="${this.img}" alt="image" class="goods-img">
-                <h3 class="goods-product_name">${this.product_name}</h3>
-                <p class="goods-price">₽ ${this.price}</p>
-                <button class="by-btn">В корзину</button>
-            </div>`;
-    }
-}
-
+ 
 const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 function makeGETRequest(url) {
@@ -30,7 +15,6 @@ function makeGETRequest(url) {
         if (xhr.readyState === 4) {
 
             resolve(xhr.responseText);
-        
         }
         }
         xhr.open('GET', url, true);
@@ -38,6 +22,20 @@ function makeGETRequest(url) {
     });
 
     return promise;
+}class GoodsItem {
+    constructor(product_name, price, img) {
+        this.product_name = product_name;
+        this.price = price;
+        this.img = img;
+    }
+    render() {
+        return `<div class="goods-item">
+                <img src="${this.img}" alt="image" class="goods-img">
+                <h3 class="goods-product_name">${this.product_name}</h3>
+                <p class="goods-price">₽ ${this.price}</p>
+                <button class="by-btn">В корзину</button>
+            </div>`;
+    }
 }
 
 class GoodsList {
@@ -71,9 +69,10 @@ class GoodsList {
 const list = new GoodsList();
 list.fetchGoods(() => {
     list.render();
+    list.getTotalPrice();
 });
 
-list.getTotalPrice();
+
 
 //создать класс Корзина
 class Box {
