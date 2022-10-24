@@ -1,7 +1,7 @@
 'use strict'; 
 
  
-/*const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 function makeGETRequest(url) {
     const promise = new Promise((resolve,reject) => {
@@ -75,6 +75,11 @@ class GoodsList {
 }
 const searchButton = document.querySelector('.search-button');
 const searchInput = document.querySelector('.goods-search');
+const enterPoleName = document.querySelector('.poleName');
+const enterPoleText = document.querySelector('.poleText');
+const enterPolePhone = document.querySelector('.polePhone');
+const enterPoleEmail = document.querySelector('.poleEmail');
+const buttonSend = document.querySelector('.btn-send');
 
 const list = new GoodsList();
 list.fetchGoods(() => {
@@ -102,7 +107,7 @@ class Box {
     }
     /*clearCart(){
         this.items = [] //очистить корзину
-    }
+    }*/
     addTotalPriceBox(){ //посчитать итог в корзине
         let sum = 0;
         for(let i=0; i<this.items.length; i++){
@@ -121,7 +126,7 @@ cart.show();
 cart.addTotalPriceBox();
 
 window.cart = cart;
-*/
+/*
 //ДЗ 4/1. Дан большой текст, в котором для оформления прямой речи используются одинарные
 //кавычки. Придумать шаблон, который заменяет одинарные кавычки на двойные.
 
@@ -141,11 +146,22 @@ const b = a.replace(regexpPro1,'" ');
 const c = b.replace(regexpPro2,'"');
 console.log(c);
 
-//ДЗ 4/3.* Создать форму обратной связи с полями: Имя, Телефон, E-mail, текст, кнопка Отправить.
+const regexpPro3 = / "" \.'/g;
+console.log(bigText.replace(regexpPro3,' "'));
+*/
+//ДЗ 4/3. Создать форму обратной связи с полями: Имя, Телефон, E-mail, текст, кнопка Отправить.
 //При нажатии на кнопку Отправить произвести валидацию полей следующим образом:
 //a. Имя содержит только буквы.
 //b. Телефон имеет вид +7(000)000-0000.
 //c. E-mail имеет вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru.
 //d. Текст произвольный.
 //e. Если одно из полей не прошло валидацию, необходимо выделить это поле красной рамкой
-//и сообщить пользователю об ошибке.
+//и сообщить пользователю об ошибке
+
+    
+     
+
+
+
+
+     
